@@ -42,7 +42,7 @@ Continuing my 30 Days JavaScript Challenge, I built an Expense Tracker Web App u
 
 ## Live Demo
 
-> Add your deployed project link here.
+> (https://saurabh54e.github.io/Js-Day12-Expense-Tracker-App/)
 
 ## Author
 
