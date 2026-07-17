@@ -1,0 +1,380 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+body {
+  background: var(--bg1);
+  line-height: 1.5;
+}
+:root {
+  --bg1: #f5f3ff;
+  --bg2: #ede9fe;
+
+  --card: #ffffff;
+
+  --text: #1e1b4b;
+  --muted: #6b7280;
+
+  --accent: #7c3aed;
+  --accent-soft: #a855f7;
+
+  --income: #16a34a;
+  --expense: #dc2626;
+
+  --btn1: #7c3aed;
+  --btn2: #6d28d9;
+
+  --border: #ddd6fe;
+}
+
+.main {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 32px;
+
+  background: linear-gradient(135deg, var(--bg1), var(--bg2));
+}
+
+.container {
+  width: 100%;
+  max-width: 700px;
+
+  background: var(--card);
+
+  border-radius: 20px;
+
+  padding: 32px;
+
+  box-shadow: 0 12px 32px rgba(124, 58, 237, 0.12);
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 32px;
+}
+.heading {
+  font-size: 32px;
+  color: var(--text);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 24px;
+  margin-top: 5px;
+}
+
+.summary-card {
+  background-color: var(--card);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.balance-card h2,
+.income-card h3,
+.expense-card h3 {
+  font-size: 20px;
+  color: var(--text);
+}
+.balance-card {
+  text-align: center;
+}
+#balanceAmount {
+  color: var(--text);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#incomeAmount {
+  color: var(--income);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#expenseAmount {
+  color: var(--expense);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.income-expense {
+  display: flex;
+  gap: 20px;
+}
+
+.income-card,
+.expense-card {
+  flex: 1;
+}
+
+.add-transaction {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.transaction-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 16px;
+  color: var(--text);
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  font-size: 16px;
+  color: var(--text);
+
+  background: #fff;
+}
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--accent);
+
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+.radio-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.form-group p {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.form-group input,
+.form-group select {
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+::placeholder {
+  color: var(--muted);
+}
+.btn {
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+.btn-primary {
+  background: var(--btn1);
+
+  color: white;
+}
+.btn-primary:hover {
+  background: var(--btn2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
+}
+.form-group input:focus-visible,
+.form-group select:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.section-title {
+  font-size: 20px;
+  color: var(--text);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.search-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.search-input,
+.filter-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--card);
+  transition:
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+.search-section input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+.search-section input:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 1px;
+}
+.filter-select {
+  width: 100%;
+  padding: 5px 5px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  align-self: center;
+  font-size: 16px;
+  color: var(--text);
+  background: #fff;
+}
+
+.filter-select:focus,
+.filter-select:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+  outline: 1px solid var(--accent);
+  outline-offset: 1px;
+} 
+
+.search-controls {
+  display: flex;
+  gap: 1rem;
+}
+
+.search-input {
+  flex: 2;
+}
+
+.filter-select {
+  flex: 1;
+}
+
+.recent-transactions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.transaction-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background-color: var(--card);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.transaction-item {
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.transaction-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.12);
+}
+.transaction-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.transaction-title {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.transaction-category {
+  font-size: 10px;
+  color: var(--muted);
+}
+.transaction-amount {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.transaction-amount.income {
+  color: var(--income);
+}
+
+.transaction-amount.expense {
+  color: var(--expense);
+}
+.transaction-actions {
+  display: flex;
+  gap: 8px;
+}
+.btn-edit,
+.btn-delete {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    background-color .3s ease,
+    transform .3s ease;
+}
+
+.btn-edit {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-edit:hover {
+  background: var(--btn2);
+  transform: translateY(-2px);
+}
+
+.btn-delete {
+  background: var(--expense);
+  color: white;
+}
+
+.btn-delete:hover {
+  background: #b91c1c;
+  transform: translateY(-2px);
+}
